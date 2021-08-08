@@ -3,19 +3,19 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Create New User</title>
+  <title>newUser</title>
 </head>
 <body>
 <div align="center">
   <h2>New User</h2>
-  <form th:method="post" th:action="@{/users}" th:object="${user}">
+  <form th:method="POST" th:action="@{/admin/addUser}" th:object="${user}">
     <table border="0" cellpadding="5">
       <tr>
         <td>Name:</td>
         <td><input name="name"/></td>
       </tr>
       <tr>
-        <td>SurName:</td>
+        <td>SURNAME:</td>
         <td><input name="surname"/></td>
       </tr>
       <tr>
@@ -23,9 +23,26 @@
         <td><input name="year"/></td>
       </tr>
       <tr>
+        <td>Username:</td>
+        <td><input name="username"/></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" name="password"/></td>
+      </tr>
+      <input th:type="checkbox" th:id="1" th:name="ADMIN" th:value="ADMIN">
+      <label th:for="ADMIN">Admin</label>
+      <input th:type="checkbox" th:id="2" th:name="USER" th:value="USER">
+      <label th:for="USER">User</label>
+      <tr>
         <td colspan="8"><input type="submit" value="Create!"></td>
       </tr>
     </table>
+  </form>
+  <br>
+  <br>
+  <form th:method="get" th:action="@{/admin}">
+    <input type="submit" value="return">
   </form>
 </div>
 </body>

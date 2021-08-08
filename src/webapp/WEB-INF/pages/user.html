@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>userPage</title>
+</head>
+<body>
+<div th:align="center" class="tg">
+  <table cellspacing="5" cellpadding="10" border="1" width="50%">
+    <thead>
+    <h2>My page</h2>
+    </thead>
+    <tbody>
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>SURNAME</th>
+      <th>USERNAME</th>
+      <th>Password</th>
+      <th>Role</th>
+    </tr>
+    <tr>
+      <td th:text="${user.id}">id</td>
+      <td th:text="${user.name}">Name</td>
+      <td th:text="${user.surname}">SurName</td>
+      <td th:text="${user.age}">Age</td>
+      <td th:text="${user.username}">Email</td>
+      <td th:text="${user.password}">Password</td>
+      <td th:text="${authentication.getAuthorities()}">Role</td>
+    </tr>
+    </tbody>
+  </table>
+  <form action="/logout" method="POST">
+    <button type="submit">logout</button>
+  </form>
+</div>
+</body>
+</html>
